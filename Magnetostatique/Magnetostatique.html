@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Magnétostatique</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+
+      <h1>Magnétostatique</h1>
+      
+      <div>
+        Ce cours introduit la notion de champ magnétique en laissant de côté son origine. On se
+        concentre ici sur les interactions magnétiques&#x202f;:
+        <ul>
+          <li>l’interaction de Lorentz entre une charge et un champ magnétique</li>
+          <li>l’interaction de Laplace entre un conducteur parcouru par un courant électrique et un
+            champ magnétique</li>
+        </ul>
+      </div>
+      
+      <h2>Les aimants</h2>
+
+      <h3>Propriétés des aimants</h3>
+      
+      <div>
+        La <q>pierre d’aimant</q> qui a la propriété d’attirer les petits morceaux de fer, est
+        connue depuis l’antiquité grecque. On trouve cette pierre étonnante dans la région de
+        Magnésie, en Asie Mineure. On sait aujourd’hui qu’elle est formée essentiellement d’oxyde
+        de fer \(\mathrm{Fe_3O_4}\) que l’on appelle magnétite. Façonnée et polie en forme de
+        cuiller, elle est utilisée en Chine dès le <span class="p_cap">III</span><sup>e</sup> siècle
+        à des fins divinatoires. Il faut attendre l’an Mille environ pour voir apparaître les
+        premières boussoles. Elle est adoptée par les navigateurs arabes puis européens pour
+        s’orienter en mer. L’usage du compas de marine devient primordial avec les grandes
+        explorations à la Renaissance. Sa pièce principale est une aiguille d’acier que l’on a
+        aimantée par frottement contre une pierre d’aimant.
+      </div>
+      
+      <figure>
+        <img src="aiguille_aimantee.png">
+        <figcaption>Aiguille aimantée.</figcaption>
+      </figure>
+      
+      <div>
+        Les aimants présentent toujours au moins deux pôles, appelés pôle sud et pôle nord. Lorsque
+        l’on approche deux aimants, on met aisément en évidence deux types d’interaction&#x202f;:
+        deux pôles de mêmenature se repoussent alors que deux pôles de nature différente s’attirent.
+      </div>
+      
+      <figure>
+        <img src="interraction_aimants.png">
+        <figcaption>Interaction entre aimants.</figcaption>
+      </figure>
+      
+      <h3>Notion de champ magnétique</h3>
+      
+      <div>
+        <u>Expérience&#x202f;:</u><br />
+        En un point de la surface terrestre et en l’absence d’aimants ou de circuits électriques,
+        l’aiguille d’une boussole s’oriente dans la direction Sud-Nord. Approchons un
+        aimant&#x202f;: l’orientation de la boussole s’en trouve modifiée. Déplaçons la boussole
+        autour de l’aimant&#x202f;: la direction de la boussole varie d’un point à l’autre. Enfin,
+        perturbons l’aiguille de la boussole&#x202f;: elle se met à osciller autour de la direction
+        indiquée initialement. Si l’on rapproche l’aimant, l’aiguille oscille de plus en plus vite.
+      </div>
+      
+      <div>
+        <u>Interprétation&#x202f;:</u><br />
+         Sur Terre, il règne un champ de force magnétique qui oriente toutes les boussoles dans
+         l’axe sud-nord. Par convention, le pôle qui indique le nord est appelé pôle nord de la
+         boussole, l’autre étant alors le pôle sud.<br />
+         Un aimant modifie les propriétés magnétiques de l’espace&#x202f;: il crée un champ
+         magnétique. Ce champ présente une direction donnée par la boussole et un sens donné par
+         l’axe sud-nord de la boussole.<br />
+         Enfin, plus ce champ est important, plus l’aiguille est forcée de s’aligner avec ce champ
+         ce qui explique l’augmentation de la fréquence des oscillations.
+      </div>
+      
+      <div>
+        <u>Conclusion&#x202f;:</u><br />
+        L’espace est caractérisé par un champ de force qui présente les attributs d’un vecteur que
+        l’on nomme vecteur champ magnétique et que l’on note généralement \(\overrightarrow{B}(M)\).
+        Ce champ est détectable par une boussole.
+      </div>
+      
+      <div>
+        Une façon de visualiser le champ magnétique que produit un aimant consiste à disperser
+        autour, de la limaille de fer&#x202f;: les aiguilles de fer s’aimantent puis de comportent
+        comme de petites boussoles qui s’orientent suivant le champ magnétique local.
+      </div>
+      
+      <figure>
+        <img src="spectre_magnetique.png">
+        <figcaption>Spectre magnétique&#x202f;: les grains de limaille de fer se comportent comme de
+          petites boussoles, matérialisant ainsi les lignes de champ.</figcaption>
+      </figure>
+      
+      <h2>Force de Lorentz</h2>
+
+      <h3>Définition du champ magnétique</h3>
+      
+      <div>
+        Le champ magnétique est défini à partir de la force de déflexion que ressent une particule
+        chargée en présence d’une source de champ magnétique.
+      </div>
+      
+      <div>
+        Considérons un tube de Crookes dans lequel on produit un faisceau d’électrons entre deux
+        électrodes. Les électrons, en entrant en collision avec les quelques molécules du gaz
+        résiduel du tube, produisent une lumière de fluorescence, rendant ainsi visible leur
+        trajectoire.
+      </div>
+      
+      <div>
+        Approchons maintenant un aimant perpendiculairement à la vitesse initiale&#x202f;: le
+        faisceau est alors dévié tout en restant dans un plan perpendiculaire au champ magnétique.
+        Ainsi, une charge électrique en mouvement ressent, en plus de la force électrique, une
+        force de nature magnétique.
+      </div>
+      
+      <figure>
+        <img src="deflexion_magnetique.png">
+        <figcaption>Déflexion magnétique.</figcaption>
+      </figure>
+      
+      <div>
+        L’analyse de la trajectoire montre que la force électromagnétique que subit une particule
+        chargée en mouvement s’écrit&#x202f;:
+        $$
+          \quad \boxed{ \overrightarrow{f} 
+            = \underbrace{q\overrightarrow{E}}_{\rm{force\;électrique}}
+            + \underbrace{q\overrightarrow{v} \wedge \overrightarrow{B}}_{\rm{force\;magnétique}} }
+        $$
+      </div>
+      
+      <div>
+        Dans le Système International d’Unités, le champ magnétique s’exprime en Tesla.<br />
+        L’analyse dimensionnelle montre que
+        $$
+          \quad [f] = \mathrm{ILB} \Rightarrow 1\,\mathrm{T} = 1\,\mathrm{N.A^{-1}m^{-1}}
+        $$
+      </div>
+      
+      <div>
+        La force magnétique étant constamment perpendiculaire au vecteur vitesse, elle ne fournit
+        pas de puissance mécanique et donc pas de travail.
+        $$
+          \quad \overrightarrow{f} \perp \overrightarrow{v}
+          \Rightarrow \mathcal{P} = \overrightarrow{f} \cdot \overrightarrow{v} = 0
+        $$
+      </div>
+      
+      <div>
+        Par conséquent, en vertu du
+        <a href="https://sciencesingenieur.github.io/Mecanique-du-point/Energie/Energie.html#TEC">
+        théorème de l’énergie cinétique</a>, une particule soumise uniquement à la force magnétique
+        conserve sa vitesse constante en norme&#x202f;:
+        $$
+          \quad \frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{1}{2}mv^2\right) = \mathcal{P} = 0
+        $$
+        La force magnétique incurve la trajectoire sans modifier la vitesse de la particule.
+      </div>
+      
+      <div>
+        La force magnétique ne travaille pas. Cependant, si le champ magnétique varie dans le temps,
+        il apparaît un champ électrique lié à la variation du champ magnétique (phénomène
+        d’induction) qui, lui, travaille.
+      </div>
+      
+      <h3>Particule dans un champ magnétique uniforme</h3>
+      
+      <div>
+        Étudions le mouvement d’une particule de charge \(q\) située dans une zone où règne un champ
+        magnétique uniforme et permanent \(\overrightarrow{B}\). On néglige la force de gravitation
+        devant la force de Lorentz.
+      </div>
+      
+      <div>
+        Dans la
+        <a href="https://sciencesingenieur.github.io/Mecanique-du-point/Cinematique/Cinematique.html#base_Frenet">
+        base de Frenet</a>, l’accélération de la particule s’écrit&#x202f;:
+        $$
+          \overrightarrow{a} = \frac{\mathrm{d}v}{\mathrm{d}t} \vec{t} + \frac{v^2}{R} \vec{n}
+            = \frac{v^2}{R} \vec{n}
+        $$
+      </div>
+      
+      <div>
+        Dans le référentiel d’étude supposé galiléen, la seconde loi de Newton donne
+        $$
+          \quad |q|vB\sin(\alpha) = m \frac{v^2}{R}
+        $$
+        où \(\alpha\) représente l’angle que fait le vecteur vitesse avec le vecteur champ
+        magnétique.
+      </div>
+      
+      <div>
+        Trois cas de figure se présentent&#x202f;:
+        <ol>
+          <li>\(\alpha = 0\) ou \(\pi\)&#x202f;: la force magnétique est nulle et le vecteur vitesse
+            reste constant en direction et en norme. Le mouvement est rectiligne uniforme.</li>
+          <li>\(\alpha = \pi/2\)&#x202f;: la vitesse n’a pas de composante suivant
+            \(\overrightarrow{B}\) et la force est perpendiculaire au champ magnétique. Ainsi,le
+            mouvement s’effectue dans le plan formé par la vitesse \(\overrightarrow{v}\) et la
+            force de Lorentz. Par ailleurs, le rayon de courbure vaut \(R = \frac{mv}{|q|B}\). Ce
+            rayon de courbure est constant si le champ magnétique est uniforme et permanent&#x202f;:
+            la trajectoire est donc un cercle de rayon R.<br />
+            Ce cercle est décrit à la vitesse angulaire
+            $$
+              \quad \omega_c = \frac{v}{R} = \frac{|q|B}{m}
+            $$
+            Cette vitesse angulaire est aussi appelée <b>pulsation cyclotron</b>.</li>
+          <li>Dans les autres cas, il est facile de montrer que la composante de la vitesse suivant
+          la direction du champ magnétique reste constante. Le mouvement se décompose alors en un
+          mouvement uniforme suivant le champ magnétique et un mouvement circulaire dans un plan
+          perpendiculaire. On obtient un mouvement hélicoïdal dont l’axe est le champ magnétique et
+          le rayon de courbure vaut \(R = \frac{mv}{|q|B}\sin(\alpha)\).
+            <figure>
+              <img src="mouvement_helicoidal.png">
+              <figcaption>Mouvement hélicoïdal d’une particule de charge négative dans un champ
+                magnétique.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+      
+      <div>
+        Remarque&#x202f;:<br />
+        Une particule accélérée dissipe de l’énergie sous la forme d’un rayonnement
+        électromagnétique, dit rayonnement cyclotron, et a pour effet une diminution de la vitesse
+        (et donc du rayon decourbure) au cours du temps. Cet effet est négligé ici.
+      </div>
+      
+      <h2>Interaction magnétique avec les courants électriques</h2>
+      
+      <h3>Force de Laplace</h3>
+      
+      <div>
+         Considérons un conducteur filiforme parcouru par un courant électrique d’intensité \(I\) en
+         présence d’un champ magnétostatique \(\overrightarrow{B}\). Admettons que ce conducteur
+         soit en mouvement dans le champ magnétique et analysons les forces qui s’exercent sur une
+         portion orientée \(\overrightarrow{\mathrm{d}\ell}\) du conducteur.
+      </div>
+      
+      <div>
+        Adoptons les notations suivantes&#x202f;:
+        <ul>
+          <li>\(s\) est la section droite du fil conducteur</li>
+          <li>\(n_-\) est le nombre de porteurs de charges mobiles (charges \(q_-\)) par unité de
+            volume</li>
+          <li>\(n_+\) est le nombre de cations fixes (charges \(q_+\)) par unité de volume assurant
+            la neutralité de la matière</li>
+          <li>\(\overrightarrow{V}\) est la vitesse de la portion de conducteur par rapport au
+            laboratoire</li>
+          <li>\(\overrightarrow{v}\) est la vitesse moyenne des porteurs de charge libres par
+            rapport au conducteur</li>
+        </ul>
+      </div>
+      
+      <figure>
+        <img src="notations_force_Laplace.png" width="60%">
+        <figcaption>Notations pour la force de Laplace.</figcaption>
+      </figure>
+      
+      <div>
+         L’électroneutralité du conducteur impose \(n_-q_- + n_+q_+ = 0\).
+      </div>
+      
+      <div>
+        Intéressons-nous à la force magnétique que ressent une portion de conducteur.<br />
+        Appelons \(\overrightarrow{\mathrm{d}\ell}\) un élément de longueur du conducteur situé en
+        \(M\) et orienté par le sens algébrique du courant. Sommons toutes les forces magnétiques de
+        Lorentz subies par toutes les particules chargées&#x202f;:
+        $$
+          \quad \overrightarrow{\mathrm{d}F}
+            = n_- s \mathrm{d}\ell q_- (\overrightarrow{v}+\overrightarrow{V})
+              \wedge \overrightarrow{B}
+              + n_+ s \mathrm{d}\ell q_+ \overrightarrow{V} \wedge \overrightarrow{B}
+            = n_- s \mathrm{d}\ell q_- \overrightarrow{v} \wedge \overrightarrow{B}
+        $$
+        On reconnaît dans cette expression le vecteur densité de courant \(\overrightarrow{j} =
+        q_- n_- \overrightarrow{v} \) d’où&#x202f;:
+        $$
+          \quad \overrightarrow{\mathrm{d}F}
+            = s \mathrm{d}\ell \overrightarrow{j} \wedge \overrightarrow{B}
+        $$
+         Dans le cas d’un circuit filiforme, on a \( s \mathrm{d}\ell \overrightarrow{j} =
+         I \overrightarrow{\mathrm{d}\ell}\). Ainsi
+         $$
+          \quad \overrightarrow{\mathrm{d}F}
+            = I \overrightarrow{\mathrm{d}\ell} \wedge \overrightarrow{B}
+        $$
+         La résultante des forces s’écrit alors
+        $$
+          \quad \boxed{ \overrightarrow{F}
+            = \oint_{\mathcal{C}} I \overrightarrow{\mathrm{d}\ell} \wedge \overrightarrow{B} }
+        $$
+        Cette force, dite force de Laplace, représente la force macroscopique que ressent un
+        conducteur dans un champ magnétique.
+      </div>
+      
+      <div>
+        Si le conducteur n’est pas filiforme, on utilisera la formule plus générale
+        $$
+          \quad \overrightarrow{F}
+            = \iiint \overrightarrow{j} \wedge \overrightarrow{B} \mathrm{d}\tau
+        $$
+        où l’intégration est effectuée sur le volume du conducteur (\(\mathrm{d}\tau\) représente
+        l’élément de volume).
+      </div>
+      
+      <div>
+        La force de Laplace possède de nombreuses applications dans le domaine
+        électrotechnique&#x202f;:
+        <ul>
+          <li>le moteur électrique continu produit un mouvement rotatif à l’aide d’un courant
+            continu dans un champ magnétique radial</li>
+          <li>le haut-parleur électrodynamique produit un déplacement alternatif d’une membrane à
+            l’aide d’un courant alternatif transformant ainsi l’énergie électrique en énergie
+            sonore</li>
+          <li>l’ampèremètre à aiguille relie la mesure d’une intensité électrique à un angle de
+            torsion d’un circuit électrique dans un champ magnétique</li>
+        </ul>
+      </div>
+      
+      <h3>Effet Hall</h3>
+      
+      <div>
+        On peut se demander comment les porteurs de charge libres réussissent à transmettre la force
+        magnétique à l’ensemble du conducteur. En fait, en présence d’un champ magnétique, ces
+        porteurs de charge sont déviés et tentent de sortir du conducteur. Cependant, les charges
+        fixes du cristal les retiennent au sein du conducteur&#x202f;: c’est par ce processus que la
+        force magnétique est transmise au conducteur.
+      </div>
+      
+      <div>
+        De surcroît, en s’accumulant sur les parois, les porteurs de charge libres créent un champ
+        électrique dont l’effet compense la force magnétique et assure ainsi un régime permanent
+        (les porteurs de charge se déplacent à une vitesse moyenne constante). Ce champ électrique
+        produit une tension que l’on peut mesurer&#x202f;: c’est l’effet Hall.
+      </div>
+      
+      <div>
+        Considérons une plaquette conductrice de longueur \(\ell\), de largeur \(b\) et de faible
+        épaisseur \(a\). La plaquette, parcourue par un courant d’intensité \(I\), est placée dans
+        un champ magnétostatique uniforme et perpendiculaire à sa plus grande face. La force
+        magnétique concentre les charges mobiles sur un bord ce qui produit une force électrique
+        s’opposant à la force magnétique. Une situation d’équilibre apparaît très vite
+        quand&#x202f;:
+        $$
+          q_-\overrightarrow{E} + q_-\overrightarrow{v} \wedge \overrightarrow{B}
+            = \overrightarrow{0} \Rightarrow E = vb
+        $$
+      </div>
+      
+      <figure>
+        <img src="effet_Hall.png">
+        <figcaption>Effet Hall.</figcaption>
+      </figure>
+      
+      <div>
+        Le champ électrique est tel que le trièdre \( \left( \overrightarrow{E}, \overrightarrow{B},
+        \overrightarrow{v} \right)\) est direct. Il règne donc une tension \(U_H\), dite tension de
+        Hall, entre les bords de la plaquette. Cette tension s’obtient en calculant la circulation
+        du champ électrique entre les bords. Le champ électrique étant constant on a tout simplement
+        $$
+          \quad U_H = E \times b = vBb
+        $$
+        Or, le courant électrique présente une intensité
+        $$
+          \quad I = js = n_-|q_-|vab
+        $$
+        D’où
+        $$
+          \quad \boxed{ U_H = \frac{1}{n_-|q_-|} \frac{IB}{a} }
+        $$
+        où \(R_H = \frac{1}{n_-|q_-|}\) désigne la constante de Hall. Ainsi, on prévoit que la
+        tension de Hall est proportionnelle au champ magnétique. Cet effet est mise à profit dans
+        les Teslamètres à effet Hall. On trouve également des sondes à effet Hall dans les
+        téléphones portables ce qui permet de mesurer l’orientation du champ magnétique terrestre
+        et donc de s’orienter. Par ailleurs, la polarité de la tension de Hall permet d’identifier
+        la nature des porteurs de charge libres.
+      </div>
+      
+      <h3>Travail des forces de Laplace</h3>
+      
+      <div>
+         Cherchons à calculer le travail des forces de Laplace lors du déplacement d’un circuit
+         alimenté par un courant constant dans un champ indépendant du temps.
+      </div>
+      
+      <h4>Cas d’un cadre rectangulaire</h4>
+      
+      <div>
+        Considérons un cadre \(ABCD\) rectangulaire parcouru par un courant d’intensité \(I\) se
+        déplaçant dans un champ magnétique uniforme. Pour simplifier nous supposons que le cadre se
+        déplace suivant \((AB)\) et qu’il peut se déformer (son aire peut donc varier). Notons
+        \overrightarrow{AA'} le déplacement de la portion \(AD\) et \overrightarrow{BB'} celui
+        de la portion \(BC\).
+      </div>
+      
+      <figure>
+        <img src="circuit_rectangulaire.png">
+        <figcaption>Circuit électrique rectangulaire en mouvement dans un champ
+          magnétique.</figcaption>
+      </figure>
+      
+      <div>
+        Seules les forces qui s’exercent sur \(AD\) et \(BC\) travaillent. La portion \(AD\)
+        subit une force de Laplace \(\overrightarrow{F_1}\) dont le travail s’écrit
+        $$
+          \quad W_1 = I( \overrightarrow{DA} \wedge \overrightarrow{B} ) \cdot \overrightarrow{AA'}
+            = I( \overrightarrow{AA'} \wedge \overrightarrow{DA} ) \cdot \overrightarrow{B}
+        $$
+        Or le vecteur \(\overrightarrow{AA'} \wedge \overrightarrow{DA}\) a pour norme, l’aire
+        \(S1\) de la surface balayée et est dirigé perpendiculairement à celle ci. On a
+        $$
+          \quad W_1 = -I \overrightarrow{B} \cdot \overrightarrow{n} S_1
+        $$
+        où \(\overrightarrow{n}\) est le vecteur unitaire normal à la surface du cadre dont le sens
+        est lié au sens positif du courant via la règle du tire-bouchon. De la même manière, la
+        force \(\overrightarrow{F_2}\) qui s’exerce sur la portion \(BC\) produit un travail
+        $$
+          \quad W_2 = I( \overrightarrow{BC} \wedge \overrightarrow{B} ) \cdot \overrightarrow{BB'}
+            = I( \overrightarrow{BB'} \wedge \overrightarrow{BC} ) \cdot \overrightarrow{B}
+        $$
+        Ici, le vecteur \(\overrightarrow{BB'} \wedge \overrightarrow{BC}\) pour norme l’aire de la
+        surface balayée par la branche \(BC\) et un sens identique à \(\overrightarrow{n}\). On a
+        donc
+        $$
+          \quad W_2 = I \overrightarrow{B} \cdot \overrightarrow{n} S_2
+        $$
+        Finalement, la travail des forces de Laplace qui s’exerce sur le cadre vaut
+        $$
+          \quad W = I \overrightarrow{B} \cdot \overrightarrow{n}( S_2 - S_1 )
+        $$
+        Si l’on note \(\phi_B = \overrightarrow{B} \cdot \overrightarrow{n} S \) le flux magnétique
+        à travers le cadre, on trouve
+        $$
+          \quad W = I \Delta \phi_B
+        $$
+        Le travail est proportionnel à l’intensité du courant et à la variation du flux magnétique.
+      </div>
+      
+      <h4>Généralisation</h4>
+      
+      <div>
+        Le calcul réalisé précédemment se généralise à tout circuit dans un champ magnétique
+        permanent. On retiendra que le travail des forces de Laplace vaut
+        $$
+          \quad \boxed{ W = I \Delta \phi_B }
+        $$
+        avec
+        $$
+          \quad \phi_B = \iint \overrightarrow{B} \cdot \overrightarrow{n} \mathrm{d}S
+        $$
+      </div>
+      
+      <h4>Énergie d’interaction d’un circuit dans un champ magnétique</h4>
+      
+      <div>
+        Selon la formule précédente, le travail des forces de Laplace ne dépend que de l’état
+        initial et final quel que soit le chemin suivi entre ces deux états. On peut donc définir
+        l’énergie potentielle \(\mathcal{E}_p^{mag}\)&#x202f;:
+        $$
+          \quad \boxed{ W = -\Delta \mathcal{E}_p^{mag} \Rightarrow \mathcal{E}_p^{mag} = -I \phi_B }
+        $$
+      </div>
+      
+      <h4>Règle du flux maximum</h4>
+      
+      <div>
+        Un circuit électrique en présence d’un champ magnétique cherchera à minimiser son énergie
+        potentielle magnétique c’est-à-dire à maximiser son flux magnétique&#x202f;: c’est la règle
+        du flux maximum. Pour illustrer cette propriété, imaginons une spire alimentée par un
+        courant d’intensité \(I\) et suspendue par deux fils électriques rigides. Approchons le pôle
+        sud d’un aimant. Imaginons que l’orientation du courant soit telle que le flux est positif.
+        Pour maximiser le flux magnétique, la spire doit se rapprocher de l’aimant, là où le champ
+        magnétique est le plus fort&#x202f;: la spire est alors attirée vers l’aimant. Inversons
+        maintenant le sens du courant. Le flux magnétique est négatif et chercher à le maximiser
+        revient à s’éloigner de l’aimant&#x202f;: la spire est repoussée par l’aimant.
+      </div>
+      
+      <figure>
+        <img src="flux_maximum.png">
+        <figcaption>Illustration de la règle du flux maximum.</figcaption>
+      </figure>
+      
+      <div>
+        Finalement, ces expériences montrent qu’une spire se comporte comme un aimant dont la
+        polarité dépend du sens du courant. Le vecteur \(\overrightarrow{n}\) indique l’axe sud-nord
+        de l’aimant équivalent.
+      </div>
+      
+      <h3>Dipôle magnétique dans un champ magnétique</h3>
+      
+      <div>
+        Comme on vient de le voir, une boucle de courant se comporte comme un aimant. On peut donc
+        lui associer un pôle sud et un pôle nord. Pour caractériser cette polarité, on définit un
+        vecteur orienté du sud vers le nord dit moment magnétique et noté \(\overrightarrow{m}\).
+      </div>
+      
+      <div>
+        Pour une spire plane quelconque, le moment magnétique s’écrit
+        $$
+          \quad \boxed{ \overrightarrow{m} = -IS\overrightarrow{n} }
+        $$
+        où \(S\) est l’aire de la surface de la spire et \(\overrightarrow{n}\) un vecteur unitaire
+        perpendiculaire à la spire et dont l’orientation est associé au sens positif du courant par
+        la règle du tire-bouchon. \(m\) s’exprime en \(\rm{A.m^2}\).
+      </div>
+      
+      <figure>
+        <img src="moment_dipolaire_magnetique.png">
+        <figcaption>Moment dipolaire magnétique.</figcaption>
+      </figure>
+      
+      <h4>Action d’un champ magnétique sur un dipôle magnétique</h4>
+      
+      <div>
+        Plaçons un dipôle magnétique dans un champ magnétique permanent. Si le dipôle est de petite
+        taille, on peut considérer que le champ magnétique est localement uniforme. Ainsi l’énergie
+        potentielle magnétique s’écrit
+        $$
+          \quad \boxed{ \mathcal{E}_p^{mag} = -I \phi_B
+            = -I \overrightarrow{B} \cdot \overrightarrow{n}S
+            = - \overrightarrow{m} \cdot \overrightarrow{B} }
+        $$
+      </div>
+      
+      <div>
+        Le dipôle ressent une résultante des forces magnétiques (qui correspond à la force de
+        Laplace)
+        $$
+          \quad \overrightarrow{F} = - \overrightarrow{\mathrm{grad}}\mathcal{E}_p^{mag}
+            = -\overrightarrow{\mathrm{grad}}\left(\overrightarrow{m} \cdot\overrightarrow{B}\right)
+        $$
+      </div>
+      
+      <div>
+        Par conséquent, si le champ magnétique est partout le même, la quantité
+        \(\overrightarrow{m}\cdot\overrightarrow{B}\) ne dépend pas de l’espace et la force
+        magnétique est donc nulle. En revanche, en vertu de la règle du flux maximum, le dipôle va
+        chercher à s’orienter de façon à maximiser son flux magnétique. Appelons \(\theta\) l’angle
+        entre le moment dipolaire magnétique et le champ magnétique. L’énergie magnétique vaut
+        $$
+          \quad \mathcal{E}_p^{mag} = -mB\cos\theta
+        $$
+      </div>
+      
+      <figure>
+        <img src="dipole_rigide.png">
+        <figcaption>Dipôle rigide dans un champ uniforme.</figcaption>
+      </figure>
+      
+      <div>
+        On constate alors qu’il existe une position d’équilibre stable lorsque le moment magnétique
+        est aligné avec le champ magnétique extérieur. Autrement dit, les forces magnétiques
+        présentent un couple d’orientation dont on peut exprimer le moment \(\Gamma\). En effet,
+        supposons le dipôle magnétique animé d’un mouvement de translation (vitesse
+        \(\overrightarrow{V}\)) et d’un mouvement de rotation (vecteur rotation
+        \(\overrightarrow{\Omega}\)). Pendant \(\mathrm{d}t\) le travail des forces magnétiques
+        s’écrit
+        $$
+          \quad \mathrm{d}W = \overrightarrow{F} \cdot \overrightarrow{V} \mathrm{d}t
+            + \overrightarrow{\Gamma} \cdot \overrightarrow{\Omega} \mathrm{d}t
+            = \overrightarrow{\Gamma} \cdot \overrightarrow{\Omega} \mathrm{d}t
+        $$
+        puisque la résultante des forces est nulle. Par ailleurs, le travail produit est relié à la
+        variation d’énergie magnétique via
+        $$
+          \quad \mathrm{d}W = -\mathrm{d}\mathcal{E}_p^{mag}
+          = \mathrm{d}\left( \overrightarrow{m} \cdot \overrightarrow{B} \right)
+        $$
+        Or, le dipôle étant considéré rigide, le moment magnétique conserve la même norme et seule
+        son sens varie. La formule de dérivation vectorielle donne \(\mathrm{d}\overrightarrow{m}/
+        \mathrm{d}t = \overrightarrow{\Omega} \wedge \overrightarrow{m}\) ce qui permet d’écrire
+        $$
+          \quad \mathrm{d}W = \mathrm{d}\left( \overrightarrow{m} \cdot \overrightarrow{B} \right)
+            = \left( \overrightarrow{\Omega} \wedge \overrightarrow{m} \right)
+              \cdot \overrightarrow{B} \mathrm{d}t
+            = \left( \overrightarrow{m} \wedge \overrightarrow{B} \right)
+              \cdot \overrightarrow{\Omega} \mathrm{d}t
+        $$
+        On obtient
+        $$
+          \quad \boxed{ \overrightarrow{\Gamma} = \overrightarrow{m} \wedge \overrightarrow{B} }
+        $$
+        On retrouve le fait que lorsque le dipôle est aligné avec le champ magnétique, le couple
+        s’annule&#x202f;: le dipôle est en équilibre mécanique.
+      </div>
+
+    </section>
+  </body>
+</html>
