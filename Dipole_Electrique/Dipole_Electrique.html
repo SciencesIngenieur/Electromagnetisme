@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Le dipôle électrique</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+
+      <h1>Le dipôle électrique</h1>
+
+      <h2>L’approximation dipolaire</h2>
+
+      <h3>Potentiel créé par un doublet électrostatique</h3>
+      
+      <div>
+        On appelle doublet électrostatique, un ensemble de deux charges ponctuelles opposées \(+q\)
+        et \(-q\) séparées d’une distance \(a\).
+      </div>
+      
+      <figure>
+        <img src="doubet_electrostatique.png">
+        <figcaption>Doublet électrostatique.</figcaption>
+      </figure>
+      
+      <div>
+        La charge \(+q\) est placée au point \(A\) et la  charge \(-q\) est placée au point \(B\).
+        On note que l’axe \(AB\) est un axe de révolution. De plus, le plan contenant le doublet et
+        le point \(M\), est un plan de symétrie de la distribution. Par conséquent&#x202f;:
+        $$
+          \quad \overrightarrow{E}(M) = E_r(r,\theta)\overrightarrow{u_r}
+            +E_{\theta}(r,\theta)\overrightarrow{u_{\theta}} 
+        $$
+      </div>
+      
+      <div>
+        Si l’on note \(r_1=AM\) et \(r_2=BM\), le potentiel créé par ce doublet en un point \(M\)
+        s’écrit&#x202f;:
+        $$
+          \quad V(M) = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)
+        $$
+      </div>
+      
+      <div>
+        Notons que l’équipotentielle \(v=0\) est l’ensemble des points tels que \(r_1=r_2\) ce qui
+        correspond au plan médiateur du segment \([AB]\), lequel représente également un plan
+        d’anti-symétrie de la distribution.
+      </div>
+      
+      <div>
+        Cherchons maintenant à calculer le potentiel loin du doublet&#x202f;; c’est-à-dire à une
+        distance \(r \gg a\). Calculons le terme prépondérant du potentiel à l’aide d’un
+        développement limité.<br />
+        On a (
+        <a href="https://sciencesingenieur.github.io/Mathematiques/Trigo/Trigo.html#loi_cosinus">
+        théorème de Pythagore généralisé</a>)&#x202f;:
+        $$
+          \quad r_1^2 = \| \overrightarrow{AO} + \overrightarrow{OM} \|^2
+            = \left(\frac{a}{2}\right)^2 + r^2 - ar\cos(\theta)
+        $$
+        D’où
+        $$
+          \quad \frac{1}{r_1} =
+            \frac{1}{r}\left( 1 +\left(\frac{a}{2r}\right)^2 -\frac{a\cos(\theta)}{r} \right)^{-1/2}
+        $$
+        Si on se contente d’une approximation à l’ordre 1 en \(a/r\), on trouve&#x202f;:
+        $$
+          \quad \frac{1}{r_1} \simeq \frac{1}{r}\left( 1 + \frac{a\cos(\theta)}{2r} \right)
+        $$
+        De même pour \(1/r_2\) (\(\theta \to \pi - \theta\))&#x202f;:
+        $$
+          \quad \frac{1}{r_2} \simeq \frac{1}{r}\left( 1 - \frac{a\cos(\theta)}{2r} \right)
+        $$
+        Finalement, loin du dipôle, on peut approcher le potentiel par&#x202f;:
+        $$
+          \quad V = \frac{qa\cos(\theta)}{4\pi\varepsilon_0r^2} \quad / \quad r \gg a
+        $$
+      </div>
+      
+      <div>
+        Cela constitue l’approximation dipolaire. On remarque que le potentiel décroît à grande
+        distance. En effet, loin du doublet, on <q>voit</q> une charge totale nulle ce qui explique
+        que les effets électriques diminuent plus vite que ceux d’une charge ponctuelle.
+      </div>
+      
+      <h4>Moment dipolaire électrique</h4>
+      
+      <div>
+        On note également que le potentiel dépend du produit \(qa\) qui représente le moment
+        dipolaire électrique du doublet. On définit le moment dipolaire \(\overrightarrow{p}\) du
+        doublet par&#x202f;:
+        $$
+          \quad \boxed{ \overrightarrow{p} = q \overrightarrow{BA} }
+        $$
+        orienté de la charge négative vers la charge positive. Ce moment s’exprime en \(\rm{C.m}\).
+      </div>
+      
+      <div>
+        On peut alors exprimer le potentiel dans l’approximation dipolaire à l’aide du moment
+        dipolaire&#x202f;:
+        $$
+          \quad \boxed{ V_{\mathrm{dipolaire}}
+            = \frac{\overrightarrow{p} \cdot \overrightarrow{u_r}}{4\pi\varepsilon_0r^2}
+            = \frac{\overrightarrow{p} \cdot \overrightarrow{OM} }{4\pi\varepsilon_0r^3} }
+        $$
+      </div>
+      
+      <h3>Généralisation</h3>
+      
+      <div>
+        Généralisons le résultat précédent en considérant une distribution localisée decharges.On
+        suppose qu’un ensemble de \(N\) charges (\(q_1,\dotsc,q_N\)) occupe un volume fini. Nous
+        noterons \(a\), la dimension caractéristique de cette distribution. Cette distribution peut
+        par exemple modéliser une molécule, un ion complexe, un métal chargé etc. On cherche à
+        calculer les effets électriques (potentiel et champ électrique) dans l’approximation
+        dipolaire, c’est-à-dire pour des points \(M\) situés à une distance grande devant \(a\).
+      </div>
+      
+      <div>
+         Plaçons l’origine \(O\) d’un repère dans la distribution puis adoptons les notations
+         suivantes&#x202f;:
+         <ul>
+          <li>\(r=OM\), la distance entre \(O\) et \(M\)</li>
+          <li>\(r_i=P_iM\) où \(P_i\) repère la position de la charge \(q_i\)</li>
+          <li>\(a_i=OP_i\) la distance entre \(O\) et \(P_i\)</li>
+        </ul>
+      </div>
+      
+      <figure>
+        <img src="distribution.png">
+        <figcaption> Distribution de 𝑁 charges ponctuelles.</figcaption>
+      </figure>
+      
+      <div>
+        Le potentiel électrostatique créé en M par la distribution de charges s’écrit&#x202f;:
+        $$
+          \quad V(M) = \sum_{i=1}^N \frac{q_i}{4\pi\varepsilon_0r_i}
+        $$
+        avec
+        $$
+          \quad r_i = \| \overrightarrow{OM} - \overrightarrow{OP_i} \|
+            = r\sqrt{1 + \left(\frac{a_i}{r}\right)^2
+              -2\frac{\overrightarrow{OM} \cdot \overrightarrow{OP_i}}{r^2} }
+        $$
+      </div>
+      
+      <div>
+        Puisque \(a_i/r \ll 1\), effectuons un développement limité du potentiel à l’ordre 2 en
+        \(a_i/r\) à l’aide de la relation \( (1 + \varepsilon )^{-1/2} = 1 - 1/2\varepsilon
+        + 3/8\varepsilon^2 + o(\varepsilon^2)\)&#x202f;:
+        $$
+          \quad V(M) = \sum_{i=1}^N \frac{q_i}{4\pi\varepsilon_0r}
+            \left( 1+ \frac{\overrightarrow{OM} \cdot \overrightarrow{OP_i}}{r^2}
+              + \frac{ 3\left(\overrightarrow{OP_i} \cdot \overrightarrow{u_r}\right)^2
+                - {OP_i}^2}{2r^2}
+              + o\left( \frac{a_i^2}{r^2} \right)
+            \right)
+        $$
+      </div>
+      
+      <div>
+        Si l’on néglige les termes d’ordre supérieur à 2, on obtient l’approximation
+        suivante&#x202f;:
+        $$
+          \quad V(M) \simeq  \frac{\sum_{i}q_i}{4\pi\varepsilon_0r}
+            + \frac{\left(\sum_{i}q_i\overrightarrow{OP_i}\right)\cdot\overrightarrow{u_r}}
+                {4\pi\varepsilon_0r^2}
+            + \frac{\mathcal{Q}}{4\pi\varepsilon_0r^3}
+        $$
+        On voit apparaître des termes décroissant en \(1/r^n\). Les trois termes sont les premiers
+        termes de ce que l’on appelle le développement multipolaire de \(V(M)\)&#x202f;:
+        <ol>
+          <li>Le premier terme désigne le terme unipolaire. C’est le terme prépondérant lorsque la
+            charge totale est non nulle. Par exemple, un ion crée un champ quasi-newtonien dès que
+            l’on se trouve à une distance grande devant sa taille.</li>
+          <li>Le deuxième terme représente le terme dipolaire.  Il devient prépondérant lorsque la
+            charge totale est nulle à condition que \(\sum_{i}q_i\overrightarrow{OP_i} \neq
+            \overrightarrow{0}\). C’est par exemple le cas d’une molécule neutre qui ne présente pas
+            de centre de symétrie (on parle de molécule polaire), comme par exemple \(\rm{H_2O}\),
+            \(\rm{HCl}\), etc.</li>
+          <li> Le troisième terme représente le terme quadrupolaire. Il décroit en \(1/r^3\)
+            et dépend du moment quadrupolaire \(\mathcal{Q} = \sum_{i}\frac{1}{2}q_ia_i^2
+            (3\cos^2(\theta_1)-1)\) qui mesure l’écart à la symétrie sphérique.</li>
+        </ol>
+      </div>
+      
+      <div>
+        Pour une distribution électriquement neutre, on définit le moment dipolaire
+        électrique&#x202f;:
+        $$
+          \quad \boxed{  \overrightarrow{p} = \sum_{i}q_i \overrightarrow{OP_i} }
+        $$
+        Si ce moment dipolaire est non nul, le potentiel électrique s’écrit dans l’approximation
+        dipolaire&#x202f;:
+        $$
+          \quad \boxed{ V_{\mathrm{dipolaire}}
+            = \frac{\overrightarrow{p} \cdot \overrightarrow{u_r}}{4\pi\varepsilon_0r^2} }
+        $$
+      </div>
+      
+      <h3>Moment dipolaire électrique</h3>
+      
+      <div>
+        La notion de dipôle trouve naturellement sa place dans la description de certaines molécules
+        pour lesquelles le barycentre des charges positives ne coïncide plus avec le barycentre des
+        charges négatives. En effet, supposons une distribution de charges électriquement neutre
+        contenant \(N_+\) charges positives \(\{{q_i}^+\}\) et  \(N_-\) charges négatives
+        \(\{{q_i}^-\}\). L’électroneutralité se traduit par la relation&#x202f;:
+        $$
+          \quad N_+ {q_i}^+ = N_- {q_i}^- = \mathcal{Q}
+        $$
+      </div>
+      
+      <div>
+        Cette neutralité électrique induit que le moment dipolaire ne dépend pas du choix de
+        l’origine. En effet,
+        $$
+          \quad \sum_{i}q_i \overrightarrow{OP_i}
+            = \sum_{i}q_i \overrightarrow{OO'} + \sum_{i}q_i \overrightarrow{O'P_i}
+            = \sum_{i}q_i \overrightarrow{O'P_i}
+        $$
+      </div>
+      
+      <div>
+        Notons maintenant \(B_+\) le barycentre des charges positives et \(B_−\) celui des charges
+        négatives. Par définition du barycentre, on a&#x202f;:
+        $$
+          \quad \mathcal{Q} \overrightarrow{OB_+}
+            = \sum_{\mathrm{charges +}}{q_i}^+ \overrightarrow{OP_i}
+        $$
+        et
+        $$
+          \quad - \mathcal{Q} \overrightarrow{OB_-}
+            = \sum_{\mathrm{charges -}}{q_i}^- \overrightarrow{OP_i}
+        $$
+        Par conséquent
+        $$
+          \quad \sum_{i}q_i \overrightarrow{OP_i} = 
+              \sum_{\mathrm{charges +}}{q_i}^+ \overrightarrow{OP_i}
+            + \sum_{\mathrm{charges -}}{q_i}^- \overrightarrow{OP_i}
+            = \mathcal{Q} \overrightarrow{OB_+} - \mathcal{Q} \overrightarrow{OB_-}
+        $$
+        Ainsi, le moment dipolaire peut se réécrire&#x202f;:
+        $$
+          \quad \boxed{ \overrightarrow{p} = \mathcal{Q} \overrightarrow{B_-B_+} }
+        $$
+      </div>
+      
+      <div>
+        Le moment dipolaire est donc lié au fait que le barycentre des charges négatives ne coïncide
+        pas avec le barycentre des charges positives. Quand une molécule présente cette propriété on
+        dit qu’elle est polaire (\(\rm{H_2O}\), \(\rm{HCl}\), \(\rm{NO}\), etc.) alors que si elle
+        présente un centre de symétrie on dit qu’elle est apolaire (\(\rm{He}\), \(\rm{N_2}\),
+        \(\rm{O_2}\), \(\rm{CO_2}\), etc.)
+      </div>
+      
+      <h4>Ordre de grandeur</h4>
+      
+      <div>
+        Le moment dipolaire s’exprimeen \(\rm{C.m}\) dans le Système international d’unités mais les
+        chimistes préfèrent une unité plus adaptée au monde moléculaire&#x202f;: le debye
+        (symbole&#x202f;: \(\rm{D}\)). Par définition&#x202f;:
+        $$
+          \quad 1 \mathrm{D} = 3,33564.10^{-30}\,\mathrm{C.m}
+            \simeq \frac{1}{3}.10^{-29}\,\mathrm{C.m}
+        $$
+      </div>
+      
+      <div>
+        Le tableau ci-dessous donne les moments dipolaires de shalogénures d’hydrogène mettant en
+        évidence le phénomène d’électronégativité&#x202f;: l’halogène déplace vers lui le barycentre
+        des charges négatives ce qui induit un moment dipolaire dirigé vers \(\rm{H}\). Ce phénomène
+        augmente de l’iode vers le fluor, élément le plus électronégatif du tableau périodique.
+      </div>
+      
+      <table>
+        <caption>Moments dipolaires des halogénures d’hydrogène.</caption>
+        <tr>
+          <th>Halogénure</th>
+          <th>Moment dipolaire</th>
+        </tr>
+        <tr>
+          <td>\(\rm{HF}\)</td>
+          <td>1,97&#x202f;D</td>
+        </tr>
+        <tr>
+          <td>\(\rm{HCl}\)</td>
+          <td>1,03&#x202f;D</td>
+        </tr>
+        <tr>
+          <td>\(\rm{HBr}\)</td>
+          <td>0,78&#x202f;D</td>
+        </tr>
+        <tr>
+          <td>\(\rm{HI}\)</td>
+          <td>0.38&#x202f;D</td>
+        </tr>
+      <table>
+      
+      <h3>Champ électrique dans l’approximation dipolaire</h3>
+      
+      <div>
+        Intéressons au champélectrique créé par une distribution électriquement neutre et présentant
+        un moment dipolaire. Se plaçant dansl’approximation dipolaire, il suffit de calculer
+        l’opposé du gradient du potentiel \(V_{\mathrm{dipolaire}}\)&#x202f;:
+        $$
+          \quad \overrightarrow{E}(M) = - \overrightarrow{\mathrm{grad}}\left(
+            \frac{\overrightarrow{p} \cdot \overrightarrow{OM} }{4\pi\varepsilon_0r^3} \right)
+        $$
+        Utilisons les
+        <a href="https://sciencesingenieur.github.io/Mathematiques/Analyse_Vectorielle/Analyse_Vectorielle.html#proprietes_gradient">
+        propriétés du gradient</a> pour écrire&#x202f;:
+        $$
+          \quad \overrightarrow{E}(M) =
+            \frac{1}{4\pi\varepsilon_0}
+            \left(
+              \frac{1}{r^3}\overrightarrow{\mathrm{grad}}\left(
+                  \overrightarrow{p}\cdot\overrightarrow{OM}
+                \right)
+            + \left(\overrightarrow{p}\cdot\overrightarrow{OM}\right)
+                \overrightarrow{\mathrm{grad}}\left(\frac{1}{r^3}\right)
+            \right)
+        $$
+        D’une part;
+        $$
+          \quad
+          \overrightarrow{\mathrm{grad}}\left(\overrightarrow{p}\cdot\overrightarrow{OM}\right) =
+          \overrightarrow{\mathrm{grad}}\left(p_xx + p_yy + p_zz\right) = \overrightarrow{p}
+        $$
+        Et d’autre part,
+        $$
+          \overrightarrow{\mathrm{grad}}\left(\frac{1}{r^3}\right)
+            = -\frac{3\overrightarrow{u_r}}{r^4}
+        $$
+        On obtient finalement
+        $$
+          \quad \overrightarrow{E}(M)
+            = \frac{1}{4\pi\varepsilon_0r^3} \left(
+                3\left(\overrightarrow{p}\cdot\overrightarrow{u_r}\right)\overrightarrow{u_r}
+                -\overrightarrow{p}
+              \right)
+            = \frac{1}{4\pi\varepsilon_0r^3} \left( \begin{matrix}
+              2p\cos(\theta) \\
+              p\sin(\theta) \\
+              0
+            \end{matrix} \right)
+        $$
+        où la dernière expression est obtenue en orientant le moment dipolaire suivant l’axe
+        \(Oz\) et en repérant le point \(M\) en coordonnées sphériques.
+      </div>
+      
+      <div>
+         Notons que le champ électrique décroît en \(1/r^3\) et qu’il n’est pas isotrope.
+      </div>
+      
+      <figure>
+        <img src="cartes_dipole.png">
+        <figcaption>Lignes de champ (lignes continues) et équipotentielles (lignes discontinues)
+        créées par un dipôle. À gauche, dans l’approximation dipolaire, à droite au voisinage de
+        l’origine.</figcaption>
+      </figure>
+      
+      <div>
+        La figure ci-dessus représente les lignes de champs électriques et les équipotentielles,
+        vues de loin et vues de près.<br />
+        On remarque que les lignes de champ présentent deux lobes symétriques perpendiculaires au
+        moment dipolaire. On peut montrer que les lignes de champ ont pour équation paramétrique
+        \(r(\theta)=K'\sin^2(\theta)\).<br />
+        Quant au potentiel électrique, la formule du potentiel dipolaire permet de trouver
+        l’équation paramétrique des équipotentielles \(r(\theta)=K\sqrt{\cos(\theta)}\).
+      </div>
+      
+      <h2>Interactions dipolaires</h2>
+      
+      <h3>Énergie d’un dipôle dans un champ électrique extérieur</h3>
+      
+      <div>
+        Supposons un dipôle électrique situé en \(O\) et plongeant dans le champ électrique
+        \(\overrightarrow{E_{ext}}\) créé par une autre distribution de charges. Notons
+        \(V_{ext}(x,y,z)\)  le potentiel associé. Insistons sur le fait que ces champs sont sans
+        rapport avec les champs produits par le dipôle lui même.
+      </div>
+      
+      <div>
+        Cherchons à exprimer l’énergie du dipôle \(\mathcal{E}_p\) dans l’hypothèse où le champ
+        extérieur varie peu à l’échelle du dipôle. Si l’on adopte un modèle de distribution discrète
+        pour le dipôle, on a
+        $$
+          \quad \mathcal{E}_p = \sum_i q_i V_{ext}(x_i,y_i,z_i)
+        $$
+        où \(x_i\), \(y_i\) et \(z_i\) sont les coordonnées du point \(P_i\).
+      </div>
+      
+      <div>
+        Compte tenu des hypothèses, contentons nous d’effectuer un développement du potentiel à
+        l’ordre un, autour de \(O\)&#x202f;:
+        $$
+          V_{ext}(x_i,y_i,z_i) \simeq V_{ext}(0,0,0) + x_i\frac{\partial V_{ext}}{\partial x}
+            + y_i\frac{\partial V_{ext}}{\partial y} + z_i\frac{\partial V_{ext}}{\partial z}
+            = V_O - \overrightarrow{E_{ext}} \cdot \overrightarrow{OP_i}
+        $$
+        L’expression de l’énergie devient&#x202f;:
+        $$
+          \quad \mathcal{E}_p = \sum_i q_i V_0
+            - \left( \sum_i q_i \overrightarrow{OP_i}\right) \cdot \overrightarrow{E_{ext}}
+        $$
+      </div>
+      
+      <div>
+         En vertu de la neutralité électrique du dipôle et de la définition du moment dipolaire,
+         on trouve
+         $$
+          \quad \boxed{ \mathcal{E}_p = -\overrightarrow{p} \cdot \overrightarrow{E_{ext}} }
+         $$
+      </div>
+      
+      <h3>Dipôle rigide dans un champ uniforme</h3>
+      
+      <div>
+        Plongeons une molécule polaire dans un champ électrostatique extérieur uniforme
+        \(\overrightarrow{E_{ext}}\). On suppose que cette molécule conserve un moment dipolaire
+        constant&#x202f;: on dit que le dipole est rigide. Quelles sont les actions que subit le
+        dipôle de la part du champ extérieur&#x202f;?
+      </div>
+      
+      <figure>
+        <img src="dipole_rigide_dans_champ.png">
+        <figcaption>Dipôle rigide dans un champ uniforme.</figcaption>
+      </figure>
+      
+      <div>
+        Commençons par écrire l’énergie d’interaction&#x202f;:
+        $$
+          \quad \mathcal{E}_p = -\overrightarrow{p} \cdot \overrightarrow{E_{ext}}
+            = -p\overrightarrow{E_{ext}} \cos \theta
+        $$
+      </div>
+      
+      <div>
+        Notons tout d’abord que l’énergie ne dépend pas de la position du dipôle. Cette invariance
+        par translation se traduit par une résultante des forces nulles. On peut le vérifier en
+        calculant directement la force électrique&#x202f;:
+        $$
+          \quad \overrightarrow{F} = \sum_i q_i \overrightarrow{E_{ext}}
+            = \overrightarrow{E_{ext}} \sum_i q_i = \overrightarrow{0} 
+        $$
+      </div>
+      
+      <div>
+        Ainsi la molécule n’est pas accélérée. En revanche, elle est soumise à un couple qui tend à
+        la faire tourner. D’après le profil de l’énergie potentielle, on voit que le système va
+        chercher à adopter la configuration la plus stable, c’est-à-dire celle correspondant à un
+        alignement du dipôle avec le champ extérieur (\(\theta=0\). On peut calculer le moment de ce
+        couple d’orientation&#x202f;:
+        $$
+          \quad \overrightarrow{\Gamma}
+            = \sum_i \overrightarrow{OP_i} \wedge q_i \overrightarrow{E_{ext}}
+            = \overrightarrow{p} \wedge \overrightarrow{E_{ext}}
+        $$
+        Ce moment tend à aligner le dipôle avec le champ électrique. Ainsi, l’action d’un champ
+        électrique uniforme consiste en une orientation du moment dipolaire suivant le champ
+        électrique.
+      </div>
+      
+      <div>
+        <u>Exemple</u>
+        Lorsque l’on dissout un ion en solution aqueuse, les molécules d’eau entourent l’ion en
+        orientant le moment dipolaire de la molécule d’eau dans le sens du champ créé par l’ion. Ce
+        processus permet d’atténuer efficacement le champ électrique créé par l’ion.
+      </div>
+      
+      <h3>Dipôle rigide dans un champ non uniforme</h3>
+      
+      <div>
+        Supposons maintenant que le champ ne soit plus uniforme et admettons que le processus
+        d’orientation du moment dipolaire suivant le champ électrique soit réalisé à tout instant.
+        Dans ce cas, l’énergie du dipôle s’écrit \(\mathcal{E}_p = -pE_{ext}\). Les actions qui
+        apparaissent font en sorte de diminuer cette énergie&#x202f;: autrement dit, le dipôle est
+        soumis à une force qui tend à le déplacer dans la zone ou règne le champ le plus fort.
+        Mathématiquement, on a
+        $$
+          \quad \overrightarrow{F} = - \overrightarrow{\mathrm{grad}} \mathcal{E}_p
+            = p \overrightarrow{\mathrm{grad}} E_{ext}
+        $$
+      </div>
+      
+      <div>
+        On en déduit qu’un dipôle rigide dans un champ non uniforme est soumis à une force qui tend
+        à le déplacer vers les zones où règne un champ électrique fort (une fois le dipôle aligné
+        avec le champ).
+      </div>
+      
+      <div>
+        C’est ce qui explique par exemple qu’un bâton d’ébonite frotté (et donc chargé) attire des
+        morceaux de papier (isolants neutres). En effet, la tige d’ébonite crée un champ électrique
+        qui polarise le morceau de papier, lequel acquiert un moment dipolaire forcément orienté
+        avec le champ électrique. Ce champ étant plus intense près de l’extrémité du bâton, le
+        morceau de papier va venir s’y coller.
+      </div>
+      
+      <h3>Interactions de van der Waals</h3>
+      
+      <div>
+        Au sein de la matière, les molécules, bien qu’électriquement neutres, sont soumises à de
+        faibles interactions attractives que l’on désigne par interactions de van der Waals. Ces
+        interactions jouent un rôle important dans la science du vivant, en chimie et en physique
+        des interfaces. Elles sont par exemple responsables de la cohésion des cristaux liquides et
+        moléculaires. Les phénomènes de tension de surface reposent également sur cette force. On
+        peut interpréter l’interaction de van der Waals comme le résultat d’une interaction entre
+        dipôles dont l’énergie d’interaction se décompose en trois termes&#x202f;:
+        $$
+          \quad \mathcal{E}_{vdW} = \mathcal{E}_{Keesom} +\mathcal{E}_{Debye} +\mathcal{E}_{London} 
+        $$
+      </div>
+      
+      <div>
+        <b>Terme de Keesom&#x202f;:</b><br />
+        Deux molécules polaires de moment dipolaire \(p_1\) et \(p_2\) auront tendance à orienter
+        leur moment dipolaire dans le sens du champ produit par l’autre dipôle puis à se rapprocher
+        du fait de l’attraction vers les champs forts. Du fait de l’agitation thermique, il faut
+        moyenner cette interaction sur toutes les orientations possibles. On montre alors que
+        l’énergie d’interaction moyenne entre deux dipôles permanents distants de \(r\) s’écrit
+        $$
+          \quad \mathcal{E}_{Keesom}
+          = - \frac{{p_1}^2{p_2}^2}{k_BT(4\pi\varepsilon_0)^2}\frac{1}{r^6}
+        $$
+      </div>
+      
+      <div>
+        <b>Terme de Debye&#x202f;:</b><br />
+        Il s’agit de l’interaction d’une molécule polaire avec une molécule apolaire, comme par
+        exemple l’interaction entre \(rm{H_2O}\) et \(rm{O_2}\). La molécule apolaire ne présente
+        pas de moment dipolaire en raison de l’existence d’un centre de symétrie, ce pendant, en
+        présence d’un champ électrique, le nuage électronique se déforme ce qui déplace le
+        barycentre des charges négatives et induit l’apparition d’un moment dipolaire&#x202f;: on
+        dit que la molécule s’est polarisée. Le moment dipolaire induit est proportionnel au champ
+        électrique extérieur&#x202f;:
+        $$
+          \quad \overrightarrow{p_{induit}} = \varepsilon_0 \alpha \overrightarrow{E_{ext}}
+        $$
+        où \(\alpha\)d ésigne la <b>polarisabilité</b>. Ainsi, en présence d’un dipôle permanent,
+        une molécule apolaire se polarise et a tendance à s’orienter suivant le champ polarisant
+        puis à se rapprocher de la molécule responsable de cette polarisation. On trouve une énergie
+        d’interaction
+        $$
+          \quad \mathcal{E}_{Debye}
+          = - \frac{{p_1}^2\alpha}{16\pi^2\varepsilon_0}\frac{1}{r^6}
+        $$
+      </div>
+      
+      <div>
+        <b>Force de London&#x202f;:</b><br />
+        On pourrait penser que deux atomes apolaires (commeles gaz rares) ou deux molécules
+        apolaires (comme \(rm{O_2}\)) n’interagissent pas puisqu’ils ne présentent pas de moment
+        dipolaire. En réalité, chaque molécule présente un moment dipolaire fluctuant \(p(t)\) de
+        moyenne nulle&#x202f;: \(\overline{\overrightarrow{p}(t)} = \overrightarrow{0}\). Le terme
+        d’interaction, proportionnel à la moyenne \(\overline{p^2}\), n’est pas nulle. On montre que
+        le terme d’interaction varie aussi comme \(1/r^6\).
+      </div>
+      
+      <div>
+        <b>Force de  van der Waals&#x202f;:</b><br />
+        En résumé, dans la matière il existe des interactions attractives entre toutes les
+        molécules. L’énergie d’interaction s’écrit
+        $$
+          \quad \boxed { \mathcal{E}_{vdW} = - \frac{C}{r^6} }
+        $$
+         Ce qui donne naissance à une force moyenne attractive
+         $$
+          \quad \boxed { \overrightarrow{F_{vdW}} = - \frac{6C}{r^7}\overrightarrow{u_r} }
+        $$
+        La décroissance rapide de la force de van der Waals permet d’expliquer sa courte portée et
+        son influence dans les milieux denses (liquide et solide).
+      </div>
+      
+      <div>
+        Bien entendu, les molécules finissent par se repousser lorsqu’elles sont en contact proche
+        du fait de la répulsion électronique et du principe d’exclusion de Pauli. Cette effet
+        stérique est en général décrit par un terme d’énergie répulsif en \(1/r^{12}\). Un modèle
+        très souvent utilisé en dynamique moléculaire pour sa simplicité, est le modèle de
+        Lennard-Jones&#x202f;:
+        $$
+          \quad \mathcal{E}_p(r)
+            = 4 \varepsilon \left( \left(\frac{a}{r}\right)^{12} -\left(\frac{a}{r}\right)^6 \right)
+        $$
+        où \(\varepsilon\) représente la profondeur du puits de potentiel et \(a\) la position
+        correspondant à une énergie nulle (voir figure ci-dessous). La profondeur du puits est de
+        l’ordre du \(\rm{kJ/mol}\) ce qui explique l’existence de cristaux moléculaires, à basse
+        température.
+      </div>
+      
+      <figure>
+        <img src="potentiel_Lennard-Jones.png">
+        <figcaption> Potentiel de Lennard-Jones.</figcaption>
+      </figure>
+      
+    </section>
+  </body>
+</html>
